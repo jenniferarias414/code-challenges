@@ -57,6 +57,7 @@ function smallestDiff(arr1, arr2) {
 
 console.log(smallestDiff([10,20,14,16,18], [30, 23, 54, 33, 96]))
 
+
 //see png//
 
 function catchSignChange(arr){
@@ -79,3 +80,51 @@ console.log(catchSignChange([1, -3, -4, 7, 6, -2, -1])); //3
 console.log(catchSignChange([1,-1,0,-2,-3,5,-6,7,-6])) //5 ?
 console.log(catchSignChange([1,-1,0,0,3,5,-6,7,7])) 
 console.log(catchSignChange([1,-3,-4,0,5])) 
+
+
+// Write a function that takes in a number. It should return a “tower” of *. The tower will be an array of strings.
+
+// The number passed in tells you how many floors the tower should have.
+
+// The first floor should have 1 block, the 2nd should have 3 blocks, the 3rd should have 5 blocks, and so on.
+
+// Each block is represented by a *.
+
+// For example, a tower of 3 floors looks like this (note the spacing):
+
+// [
+//     '  *  ',
+//     ' *** ',
+//     '*****'
+// ]
+// and a tower of 6 floors looks like this:
+
+// [
+//     '     *     ',
+//     '    ***    ',
+//     '   *****   ',
+//     '  *******  ',
+//     ' ********* ',
+//     '***********'
+// ]
+
+//first attempt below:
+// function buildTower(num) {
+//     let floor = []
+//     for (let i=0; i<num; i++){
+//         const spaces = ' '
+//     }
+// }
+
+function towerBuilder(nFloors) {
+  const tower = []
+  let towerString = '*'
+    for(let i = 0; i<nFloors; i++){ 
+      tower.push(towerString)
+      towerString += "**"
+      for (let j = 0; j<i; j++){
+        tower[j] = " " + tower[j] + ' '
+      }
+    }
+    return tower
+  }
