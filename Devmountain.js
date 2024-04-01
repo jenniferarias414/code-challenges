@@ -1,4 +1,6 @@
-//  CODE CHALLENGES 
+//  CODE CHALLENGES //
+
+
 
 // This is a short-length challenge, but requires some clever thinking.
 
@@ -54,3 +56,26 @@ function smallestDiff(arr1, arr2) {
   }
 
 console.log(smallestDiff([10,20,14,16,18], [30, 23, 54, 33, 96]))
+
+//see png//
+
+function catchSignChange(arr){
+  let signChange = 0;
+//   for(let i = 0; i < arr.length; i++){
+//     if(arr[i] * arr[i+1] < 0){
+//       signChange++;
+//     }
+//   }
+//   return signChange;
+for (let i = 0; i < arr.length - 1; i++) {
+    if ((arr[i] >= 0 && arr[i + 1] < 0) || (arr[i] < 0 && arr[i + 1] >= 0)) {
+      signChange++;
+    }
+  }
+  return signChange;
+}
+
+console.log(catchSignChange([1, -3, -4, 7, 6, -2, -1])); //3
+console.log(catchSignChange([1,-1,0,-2,-3,5,-6,7,-6])) //5 ?
+console.log(catchSignChange([1,-1,0,0,3,5,-6,7,7])) 
+console.log(catchSignChange([1,-3,-4,0,5])) 
